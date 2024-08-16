@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Raleway:wght@400;600&display=swap');
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(to bottom right, #e0c8ff, #d8a6ff);
+    overflow: hidden;
+    font-family: 'Raleway', sans-serif;
+    position: relative;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+}
+
+.card {
+    width: 300px;
+    height: 200px;
+    perspective: 1000px;
+    position: relative;
+    margin: auto;
+    border: 4px dashed #c9a2ff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    overflow: hidden;
+    background: white;
+}
+
+.front, .inside {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: transform 1s, box-shadow 0.5s;
+    border-radius: 20px;
+}
+
+.front {
+    background: radial-gradient(circle at top left, #d8a6ff, #c88eff);
+    color: white;
+    transform: rotateY(0deg);
+}
+
+.inside {
+    background: radial-gradient(circle at bottom right, #fff, #f8f8f8);
+    color: #a67dff;
+    transform: rotateY(180deg);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.card.open .front {
+    transform: rotateY(-180deg);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+}
+
+.card.open .inside {
+    transform: rotateY(0deg);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    margin: 0;
+    font-size: 28px;
+    font-family: 'Dancing Script', cursive;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.4;
+    margin: 10px 0;
+}
+
+button {
+    background-color: white;
+    color: #d18eff;
+    border: 2px solid #d18eff;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background-color: #a67dff;
+    color: white;
+    transform: scale(1.1);
+}
+
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.star {
+    width: 10px;
+    height: 10px;
+    background: white;
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: 0 0 5px white;
+    animation: twinkle 3s infinite;
+}
+
+.star1 {
+    top: 10%;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.star2 {
+    top: 40%;
+    left: 60%;
+    animation-delay: 1s;
+}
+
+.star3 {
+    top: 70%;
+    left: 30%;
+    animation-delay: 2s;
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(1.2);
+    }
+}
+
+.decorative-image {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+}
+
+.top-left {
+    top: 10px;
+    left: 10px;
+}
+
+.bottom-right {
+    bottom: 10px;
+    right: 10px;
+}
+
+.top-right {
+    top: 10px;
+    right: 10px;
+}
+
+.bottom-left {
+    bottom: 10px;
+    left: 10px;
+}
